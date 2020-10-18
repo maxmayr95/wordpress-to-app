@@ -1,21 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      My Wordpress Page
-    </ion-title>
+    <ion-title><div [innerHTML]="post?.title?.rendered"></div></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card  *ngFor="let post of posts"  >
-    <ion-card-header (click)="openPost(post?.id)">
+<ion-content>
+  <ion-card *ngIf="post != null">
+    <ion-card-header>
        <ion-img [src]="post?.jetpack_featured_media_url" style="height: 520px;"></ion-img>
       <ion-card-subtitle>{{post?.date}}</ion-card-subtitle>
       <ion-card-title><h4 [innerHTML]="post?.title?.rendered"></h4></ion-card-title>
     </ion-card-header>
 
-    <ion-card-content (click)="openPost(post?.id)">
-      <div [innerHTML]="post?.excerpt?.rendered"></div>
+    <ion-card-content >
+      <div [innerHTML]="post?.content?.rendered"></div>
     </ion-card-content>
   </ion-card>
 </ion-content>
