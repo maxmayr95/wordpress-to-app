@@ -1,0 +1,7 @@
+{
+  "name": "wordpress-to-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
